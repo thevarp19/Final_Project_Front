@@ -2,10 +2,6 @@
     font-family: 'circular_std';
     src: url('circular-std.ttf')
 }
-
-html{
-    font-family: sans-serif;
-}
 body{
     margin: 0;
     padding: 0;
