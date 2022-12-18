@@ -353,7 +353,7 @@ h3 {
 }
 .photo-text{
     background-color: rgba(0,0,0,.64);
-    -webkit-background-clip: text;п
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(180deg,transparent,#fff);
     max-height: 95px;
