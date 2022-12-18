@@ -206,8 +206,15 @@ h2 {
     justify-content: center;
     align-items: center;
 }
-.footer-container {
-    display: block;
+.hire-container-btm {
+    display: flex;
+    max-width: 1314px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px 24px;
+}
+.hire-container-top {
+    display: flex;
     max-width: 1314px;
     margin-right: auto;
     margin-left: auto;
@@ -216,7 +223,7 @@ h2 {
 .layout-flex{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 .img-human{
@@ -249,6 +256,13 @@ h2 {
     font-weight: 500;
     letter-spacing: -.32px;
 }
+.button-krug.st-white {
+    padding-right: 32px;
+    padding-left: 32px;
+    background-color: transparent;
+    background-image: none;
+    color: #000;
+}
 .button-krug:hover{
     transform: translateY(2px);
     opacity: 0.7;
@@ -264,7 +278,33 @@ h2 {
     transform-style: preserve-3d;
     opacity: 1;
   }
+.photo-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.marL{
+    margin-left: 2rem;
+}
+.marR{
+    margin-right: 2rem;
+}
+.trusted-text {
+    margin-bottom: 24px;
+    color: rgba(0,0,0,.54);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: -.32px;
+}
 
+.still-img{
+    width: 584px;
+    max-width: none;
+}
+  
 @media screen and (min-width: 992px){
     .nav-overlay {
        display: none !important;
@@ -278,6 +318,18 @@ h2 {
 @media screen and (max-width: 479px){
 .nav-logo {
     height: 28px;
+    }
+}
+@media screen and (max-width: 767px){
+.still-img {
+    width: 84%;
+    }
+}
+@media screen and (max-width: 992px){
+    .photo-text{
+       margin-right: 0;
+       margin-left: 0;
+       margin-bottom: 1rem;
     }
 }
 @media screen and (max-width: 992px){
