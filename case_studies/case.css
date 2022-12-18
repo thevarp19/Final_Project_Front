@@ -23,8 +23,6 @@ body{
     
 }
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 img {
@@ -185,8 +183,6 @@ texts{
 }
 .photo-text{
     background-color: rgba(0,0,0,.64);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-image: linear-gradient(180deg,transparent,#fff);
     max-height: 95px;
 }
@@ -220,8 +216,8 @@ texts{
         width: 100%;
     }
     
-} */
-/* 
+} 
+
 @media screen and (max-width: 479px){
 
 .gradient-photo {
@@ -230,4 +226,4 @@ texts{
 }
 } */
 
-/* adaptation*/
+/* adaptation
