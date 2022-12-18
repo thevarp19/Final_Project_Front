@@ -6,7 +6,6 @@
 html{
     font-family: sans-serif;
 }
-
 body{
     margin: 0;
     padding: 0;
@@ -56,15 +55,8 @@ a {
 }
 .h1-text{
     text-align: center;
-    margin-bottom: 20px;
     font-size: 74px;
     color: #fff;
-}
-@media screen and (max-width:360px) {
-    .h1-text{
-        font-size: 14px;
-    }
-    
 }
 .read-text{
     text-align: center;
@@ -88,13 +80,6 @@ a {
     align-items: center;
     justify-content: center;
     grid-column-gap: 16px; /* define the size between columns*/
-}
-@media screen and (max-width: 480px){
-.btn1,.btn2 {
-    width: 100%;
-    font-size: 15px;
-    text-align: center;
-     }
 }
 
 .btn1{
@@ -132,15 +117,7 @@ a {
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
 }
-@media screen and (max-width: 991px){
-.all {
-    grid-row-gap: 4rem;
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-    -ms-grid-rows: auto auto;
-    grid-template-rows: auto auto;
-     }
-}
+
 .first-container,.second-container,.third-container,.fourth-container,.fifth-container,.sixth-container{
     overflow: visible;
     margin-top: 40px;
@@ -185,7 +162,7 @@ texts{
 }
 .photo-text{
     background-color: rgba(0,0,0,.64);
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(180deg,transparent,#fff);
     max-height: 95px;
@@ -202,32 +179,3 @@ texts{
     opacity: 1;
     padding: 5px 15px;
 }
-
-@media screen and (max-width:610px) {
-    .h1-text{
-        font-size: 54px;
-    }
-}
-@media screen and (max-width:370px) {
-    .h1-text{
-        /* max-width: 300px; */
-        font-size: 2rem;
-    }
-    
-}
-/* @media screen and (max-width:610px) {
-    .text-case{
-        width: 100%;
-    }
-    
-} */
-/* 
-@media screen and (max-width: 479px){
-
-.gradient-photo {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-} */
-
-/* adaptation*/
