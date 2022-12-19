@@ -419,6 +419,7 @@ h2 {
 }
 .btns-after{
     display: flex;
+    justify-content: center;
     margin-top: 1.5rem;
     
 }
@@ -488,9 +489,6 @@ h2 {
     }
     .img-human{
         width: 83%;
-    }
-    .btns-after{
-        justify-content: center;
     }
 } 
 
