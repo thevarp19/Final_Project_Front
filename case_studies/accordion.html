@@ -6,10 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="accordion.css">
 </head>
 
 <body>
+    <div>
+        <div class="navbar-head w-nav">
+            <div class="navbar-wrapper">
+                    <a href="index.html" style="justify-self: start;">
+                            <img  src="https://assets-global.website-files.com/6047a9e15e5dc54e0d6ddd55/615350194fbbe6093e0bd8c0_logo-bloack.webp" loading="lazy"alt="Brand logo" class="nav-logo"></a>
+                    <nav class="nav-links w-nav-menu">
+                            <a href="index.html" class="navbar-link w-nav-link current" >How it Works</a>
+                            <a href="whynumi.html" class="navbar-link w-nav-link">Why NUMI</a>
+                            <a href="case_studies/case_study.html" class="navbar-link w-nav-link">Case Studies</a>
+                            <a href="/case-studies" class="navbar-link w-nav-link">Resources</a>
+                    </nav>
+                    <div class="navbar-2-button">
+                            <a href="/pro/apply/select-role" class="btn ghost-button nav">Log In</a>
+                            <a href="/client/hire-pros" class="btn bg-gradient">Hire Pros</a>
+                    </div>
+                    <button id="bur1" style="justify-self: end;" class="navbar_menu_burger w-nav-burger">
+                            <img class="burger-icon-nav"  src="hamburger-menu-svgrepo-com.svg">
+                    </button>
+            </div>
+            <div id="ov1" class="nav-overlay" style="display: none;">
+                    <div class="overlay-content" style="justify-self: center;">
+                            <a href="index.html"class="navbar-link w-nav-link current nav-link-open"> How it Works</a>
+                            <a href="whynumi.html" class="navbar-link w-nav-link nav-link-open">Why NUMI</a>
+                            <a href="case_studies/case_study.html" class="navbar-link w-nav-link nav-link-open">Case Studies</a>
+                            <a href="#" class="navbar-link w-nav-link nav-link-open">Resources</a>
+                    </div>
+            </div>
+        </div>
+    
     <div class="all-section">
         <div class="title">
             <div class="section-title">
@@ -184,8 +215,105 @@
 
     </div>
     </div>
+    <div class="all-footer">
+        <div class="container-footer">
+            <div class="foot-elements">
+                <div class="text-footer">
+                    <div class="grid-footer">
+                        <div class="footer-column">
+                            <div class="foot-title">NUMI</div>
+                            <a href="" class="foot-link">
+                                <div>Contact</div>
+                            </a>
+                            <a href="" class="foot-link">
+                                <div>Support</div>
+                            </a>
+                        </div>
+                        <div class="footer-column" >
+                            <div class="foot-title">Resources</div>
+                            <a href="" class="foot-link">
+                                <div>Blog</div>
+                            </a>
+                            <a href="" class="foot-link">
+                                <div>Color Inspiration</div>
+                            </a>
+                            <a href="" class="foot-link">
+                                <div>Software Logos</div>
+                            </a>
+                            <a href="" class="foot-link">
+                                <div>No Code Tools</div>
+                            </a>
+                        </div>
+                        <div class="footer-column">
+                            <div class="foot-title">Social</div>
+                            <a href="https://www.facebook.com/sdukz/" class="foot-link">
+                                <div>Facebook</div>
+                            </a>
+                            <a href="https://www.instagram.com/engineering_sdu/" class="foot-link">
+                                <div>Instagram</div>
+                            </a>
+                            <a href="https://twitter.com/sdukz?lang=en" class="foot-link">
+                                <div>Twitter</div>
+                            </a>
+                            <a href="https://kz.linkedin.com/company/suleyman-demirel-university-kazakhstan" class="foot-link">
+                                <div>Linkedin</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="foot-message">
+                            <div class="foot-title">Join our Newsletter</div>
+                            <div class="text-message">Free, cancel at anytime. We'll never spam or sell your data.</div>
+                        </div>
+                        <div class="email-input">
+                            <form action="/tutorial/action.html">
+
+                                <legend>Email</legend>
+                                <input class="email" type="email" name="email" size=10><br /><br>
+                                <input class="sub_email" type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="icons">
+                    <div class="grid-icons">
+                        <div class="first-icon"><img src="https://assets-global.website-files.com/6047a9e15e5dc54e0d6ddd55/62fa9dc46227f43252b4908b_best-ui-black.webp" alt=""></div>
+                        <div class="second-icon"><img src="https://assets-global.website-files.com/6047a9e15e5dc54e0d6ddd55/62fa9dcab6e1d789fc651205_best-innovation-purple.webp" alt=""></div>
+                        <a class="third-icon" href="https://www.webguruawards.com/sites/numi"><img src="https://assets-global.website-files.com/6047a9e15e5dc54e0d6ddd55/63330d4283ba36f2f189cb71_img_guru_of_the_day_gray.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="end-footer">
+                    <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8dMSw6RoNA05baskC6HcTwdQn_NZVN2g3w&usqp=CAU" alt="">
+                    <div class="end">© NUMI | All Rights Reserved</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <script src="accordion.js" type="text/javascript"></script>
+    <script>
+        $('#bur1').click(function(){
+           var width = $(window).width();
+           $('#bur1').toggleClass("open");
+           $('#ov1').slideToggle();
+   });   
+
+   function reveal() {
+   var reveals = document.querySelectorAll(".reveal");
+   for (var i = 0; i < reveals.length; i++) {
+       var windowHeight = window.innerHeight+100;
+       var elementTop = reveals[i].getBoundingClientRect().top;
+       var elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+           reveals[i].classList.add("active");
+        }
+       }
+   }
+   window.addEventListener("scroll", reveal);
+
+   </script>
+</div>
 </body>
 
 </html>
