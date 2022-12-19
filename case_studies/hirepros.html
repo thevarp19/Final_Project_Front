@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <title>Numi</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        .section{
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.footer-container {
+    display: block;
+    max-width: 1314px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px 24px;
+}
+.layout-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.tap-text{
+    font-size: 2.5rem;
+    font-weight: 600;    
+}
+.btns-after{
+    display: flex;
+    margin-top: 1.5rem;
+    
+}
+.button-krug{
+    padding: 14px 48px;
+    border-radius: 100px;
+    background-color: #000;
+    opacity: 1;
+    transition: 350ms;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 150%;
+    font-weight: 500;
+    letter-spacing: -.32px;
+}
+.button-krug:hover{
+    transform: translateY(2px);
+}
+.button-krug.st-white {
+    padding-right: 32px;
+    padding-left: 32px;
+    background-color: transparent;
+    background-image: none;
+    color: #000;
+}
+.st-white:hover{
+    transform: translateY(2px);
+    background-color: rgb(193, 234, 247);
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 1;
+    transition: 2s all ease;
+  }
+  .reveal.active{
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    opacity: 1;
+  }
+  @media screen and (max-width: 479px){
+    .tap-text {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 992px){
+    .layout-flex{
+        flex-direction: column;
+    }
+    .tap-text{
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .img-human{
+        width: 83%;
+    }
+    .btns-after{
+        justify-content: center;
+    }
+} 
+    </style>
+</head>
+
+<body>
+<div class="section">
+    <div class="footer-container">
+        <div class="layout-flex reveal">
+            <div class="photo-text marR">
+            <img src="https://assets-global.website-files.com/6047a9e15e5dc54e0d6ddd55/623ccc7d7b1b2c4fd7a1d214_Footer%20Illustration.svg" loading="lazy" class="img-human" alt="HUMAN IMAGE">
+            </div>
+            <div class="photo-text marL">
+            <div class="reveal"><h2 class="tap-text">Tap into the most driven engineers and designers on the planet</h2>
+                 <div class="btns-after">
+                    <a href="#" class="button-krug">
+                            <span>Hire Pros</span>
+                    </a>
+                    <a href="#" class="button-krug st-white">
+                            See how it works 
+                    </a>
+                 </div>
+            </div>
+        </div>
+        </div>
+    </div>
+ </div>
+</body>
