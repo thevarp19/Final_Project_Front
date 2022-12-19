@@ -81,7 +81,7 @@ body {
     position: relative;
     padding: 10px 0;
     font-size: 20px;
-    background-color: transparent;
+    background-color: transparent; /*установливает прозрачный фон*/
     color: #3c3d49;
     cursor: pointer;
   }
