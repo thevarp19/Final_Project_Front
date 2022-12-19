@@ -51,7 +51,7 @@
                                         <a href="#" class="button-krug">
                                                 <span>Hire Pros</span>
                                         </a>
-                                        <a href="#" class="button-krug st-white">
+                                        <a href="index.html" class="button-krug st-white">
                                                 See how it works 
                                         </a>
                                         </div>
@@ -111,7 +111,7 @@
                             <a href="#" class="button-krug">
                                     <span>Hire Pros</span>
                             </a>
-                            <a href="#" class="button-krug st-white">
+                            <a href="index.html" class="button-krug st-white">
                                     See how it works 
                             </a>
                          </div>
@@ -212,7 +212,7 @@
        var reveals = document.querySelectorAll(".reveal");
        for (var i = 0; i < reveals.length; i++) {
            var windowHeight = window.innerHeight+150;
-           var elementTop = reveals[i].getBoundingClientRect().top;
+           var elementTop = reveals[i].getBoundingClientRect().top-150;
            var elementVisible = 150;
             if (elementTop < windowHeight - elementVisible) {
                reveals[i].classList.add("active");
