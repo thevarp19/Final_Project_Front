@@ -1,3 +1,17 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
+$count = 0;
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+?>
 <html lang="en">
 <head>
         <title>Numi</title>
@@ -16,12 +30,12 @@
                     <nav class="nav-links w-nav-menu">
                             <a href="/index.html" class="navbar-link w-nav-link current" >How it Works</a>
                             <a href="/whynumi.html" class="navbar-link w-nav-link">Why NUMI</a>
-                            <a href="/case_studies/case_study.html" class="navbar-link w-nav-link">Case Studies</a>
-                            <a href="/case_studies/accordion.html" class="navbar-link w-nav-link">Support</a>
+                            <a href="case_studies/case_study.html" class="navbar-link w-nav-link">Case Studies</a>
+                            <a href="case_studies/accordion.html" class="navbar-link w-nav-link">Support</a>
                     </nav>
                     <div class="navbar-2-button">
-                            <a href="/Login/login.html" class="btn ghost-button nav">Log In</a>
-                            <a href="/hirepros.html" class="btn bg-gradient">Hire Pros</a>
+                            <a href="#" class="btn ghost-button nav">Log In</a>
+                            <a href="hirepros.html" class="btn bg-gradient">Hire Pros</a>
                     </div>
                     <button id="bur1" style="justify-self: end;" class="navbar_menu_burger w-nav-burger">
                             <img class="burger-icon-nav"  src="hamburger-menu-svgrepo-com.svg">
@@ -29,10 +43,10 @@
             </div>
             <div id="ov1" class="nav-overlay" style="display: none;">
                     <div class="overlay-content" style="justify-self: center;">
-                            <a href="/index.html"class="navbar-link w-nav-link current nav-link-open"> How it Works</a>
-                            <a href="/whynumi.html" class="navbar-link w-nav-link nav-link-open">Why NUMI</a>
-                            <a href="/case_studies/case_study.html" class="navbar-link w-nav-link nav-link-open">Case Studies</a>
-                            <a href="accordion.html" class="navbar-link w-nav-link nav-link-open">Support</a>
+                            <a href="index.html"class="navbar-link w-nav-link current nav-link-open"> How it Works</a>
+                            <a href="whynumi.html" class="navbar-link w-nav-link nav-link-open">Why NUMI</a>
+                            <a href="case_studies/case_study.html" class="navbar-link w-nav-link nav-link-open">Case Studies</a>
+                            <a href="case_studies/accordion.html" class="navbar-link w-nav-link nav-link-open">Support</a>
                     </div>
             </div>
         </div>
@@ -43,21 +57,25 @@
                 <legend style="display: block; justify-content: center; font-size:40; margin-bottom: 1rem;">Log In</legend>
                 <legend style="display: none; justify-content: center; font-size:40; margin-bottom: 1rem;">Registration</legend>
                 <div class="form">
-                <form class="RegForm" action="/reg.php" method="POST">
-                        <input type="text" name="Ruser" placeholder="username"/>
-                        <input type="password" name="Rpass" placeholder="password"/>
-                        <input type="text" name="Remail" placeholder="email address"/>
-                        <input type="submit"value="create" name="Submit" />
-                        <p class="message">Already registered? <a href="#">Sign In</a></p>
-                </form>
-                <form class="login-form" methor="POST" action="/login.php">
-                        <label for="email">Email: </label><br>
-                        <input type="text" id="Lmail" name="Lmail" placeholder="qwerty@gmail.com"><br>
-                        <label for="password">Password: </label><br>
-                        <input type="password" id="Lpass" name="Lpass" placeholder="password"><br><br>
-                        <input type="submit"value="log in" name="Submit" />
-                        <p class="message">Not registered? <a href="#">Create an account</a></p>
-                </form>
+                  <?php      
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = mysqli_real_escape_string($conn,$_POST['Lmail']);
+    $password = mysqli_real_escape_string($conn,$_POST['Lpass']);
+    echo $email . "<br/>" . $password ."<br>";
+    $qVal = "select id from ulog where email like '%$email%' and password like '%$password%'";
+  
+    $result = mysqli_query($conn, $qVal);
+  
+    $count = mysqli_num_rows($result);
+    echo $email ." ". $password;
+    
+  }
+                  if($count == 1) {
+                    echo "Login successful.";
+                    echo "Welcome " . $qVal;
+                  } else {
+                      echo "Invalid email or password.";
+                  }?>
                 </div>
             </div>
             <div><img src="https://uploads-ssl.webflow.com/62869dcaea70133a66edcb3d/62c3e7ee74792a2d3b824e61_homepage2.svg" loading="lazy" height="" alt="One person saying hi, check out to another" class="back-img">

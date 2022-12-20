@@ -1,15 +1,51 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  $email = mysqli_real_escape_string($conn,$_POST['Remail']);
+  $name = mysqli_real_escape_string($conn,$_POST['Ruser']);
+  $password = mysqli_real_escape_string($conn,$_POST['Rpass']);
+  echo $email . "<br/>" . $password ."<br>";
+  // $qVal = "select name from uLog where email = '$email' and password = '$password'";
+
+  // $result = mysqli_query($conn, $qVal);
+
+}
+
+
+$qIN = "Insert into uLog(username, email, password) VALUES ('$name','$email', '$password')"; 
+
+
+if (mysqli_query($conn, $qIN)) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+?>
+
 <html lang="en">
 <head>
         <title>Numi</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="register.css">
+        <link rel="stylesheet" type="text/css" href="log.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-       
 </head>
 <body class="colored-bg">
-        
     <div>
         <div class="navbar-head w-nav">
             <div class="navbar-wrapper">
@@ -38,7 +74,27 @@
                     </div>
             </div>
         </div>
-        
+
+        <main class="cont">
+            <div><img src="https://uploads-ssl.webflow.com/62869dcaea70133a66edcb3d/62c3e4ae1a998ecc4d85a69c_homepage1.svg" loading="lazy" height="" alt="Hi thank you graphic" class="back-img"></div>
+            <div class="login-page">
+                <legend style="display: block; justify-content: center; font-size:40; margin-bottom: 1rem;">Log In</legend>
+                <legend style="display: none; justify-content: center; font-size:40; margin-bottom: 1rem;">Registration</legend>
+                <div class="form">
+                <?php
+                if (mysqli_query($conn, $qIN)) {
+                  echo "New account created successfully.";
+                } else {
+                  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+                ?>
+                </div>
+            </div>
+            <div><img src="https://uploads-ssl.webflow.com/62869dcaea70133a66edcb3d/62c3e7ee74792a2d3b824e61_homepage2.svg" loading="lazy" height="" alt="One person saying hi, check out to another" class="back-img">
+                
+            </div>
+        </main>
+
             <div class="all-footer">
                 <div class="container-footer">
                     <div class="foot-elements">
@@ -114,6 +170,7 @@
         
                 </div>
             </div>
+
     </div>    
                 <script>
                      $('#bur1').click(function(){
@@ -121,6 +178,10 @@
                         $('#bur1').toggleClass("open");
                         $('#ov1').slideToggle();
                 });   
+                $('.message a').click(function(){
+                    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+                    $('legend').animate({height: "toggle", opacity: "toggle"}, "slow");
+                });
         
                 function reveal() {
                 var reveals = document.querySelectorAll(".reveal");
@@ -134,6 +195,6 @@
                     }
                 }
                 window.addEventListener("scroll", reveal);
-        
                 </script>
         </body>
+</html>
